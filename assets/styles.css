@@ -1,6 +1,7 @@
 body {
     background-color: #e1e2e3;
     font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
 }
 
 a,
@@ -67,11 +68,6 @@ a:active {
     background-color: #333333 !important;
 }
 
-.menu_search {
-    padding-right: 30px;
-    padding-left: 30px;
-}
-
 @media (max-width: 576px) {
     .menu_search {
         padding-top: 15px;
@@ -80,7 +76,7 @@ a:active {
 
 @media (max-width: 828px) {
     .menu_buttons li {
-        padding: 7px;
+        padding: 3px;
     }
     .menu_search {
         text-align: center;
@@ -140,6 +136,9 @@ a:active {
 @media (max-width: 991px) {
     .profile_img {
         width: 50% !important;
+    }
+    .profile_bio{
+        text-align: center;
     }
     #profile_name {
         margin: 20px 0px 10px;
