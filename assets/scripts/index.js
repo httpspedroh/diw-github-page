@@ -116,6 +116,8 @@ function showUserRepos() {
 
     elem_change = document.getElementById('rep_rows');
 
+    if(data.length == 0) elem_change.innerHTML = `<span class="col-12"><i>No public repositories found.</i></span>`;
+
     for(x = 0; x < data.length; x++)
     {
         let desc = '';
