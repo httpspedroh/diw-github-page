@@ -1,0 +1,166 @@
+body {
+    background-color: #e1e2e3;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+.profile_general,
+.rep_general {
+    margin: 30px 10px 30px 10px;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.general_title {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.carbon {
+    background-color: #585858;
+}
+
+.white {
+    color: white;
+}
+
+
+/* ---------------------------------- Header --------------------------------- */
+
+.header {
+    padding: 15px;
+    background-color: #333333;
+}
+
+.menu_buttons {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.menu_buttons a {
+    color: white;
+    text-align: center;
+}
+
+.menu_buttons li {
+    padding-inline-end: 7px;
+}
+
+.menu_buttons a:hover {
+    background-color: #585858;
+    color: white;
+}
+
+.menu_buttons a:visited {
+    color: white;
+}
+
+.menu_buttons .active {
+    background-color: #333333 !important;
+}
+
+.menu_search {
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+@media (max-width: 576px) {
+    .menu_search {
+        padding-top: 15px;
+    }
+}
+
+@media (max-width: 828px) {
+    .menu_buttons li {
+        padding: 7px;
+    }
+    .menu_search {
+        text-align: center;
+    }
+}
+
+
+/* ----------------------------------- Perfil ---------------------------------- */
+
+.profile_img {
+    width: 80%;
+}
+
+.profile_general h1 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#profile_name {
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.profile_user {
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    padding: 5px 10px;
+    background-color: #333333;
+    color: white;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile_user i {
+    padding-right: 10px;
+    font-size: 10px;
+}
+
+.profile_bio {
+    padding-top: 30px;
+    text-align: justify;
+    font-family: 'Roboto', sans-serif;
+}
+
+.profile_data {
+    display: block;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.profile_data:first-of-type {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.profile_data i {
+    padding-right: 10px;
+}
+
+@media (max-width: 991px) {
+    .profile_img {
+        width: 50% !important;
+    }
+    #profile_name {
+        margin: 20px 0px 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .profile_img {
+        width: 80% !important;
+    }
+}
+
+@media (max-width: 416px) {
+    .profile_user {
+        display: inline-block;
+    }
+    .profile_user:last-child {
+        margin-top: 10px;
+    }
+}
