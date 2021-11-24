@@ -119,8 +119,6 @@ a:active {
     font-size: 10px;
 }
 
-
-
 .profile_bio {
     padding-top: 30px;
     text-align: justify;
@@ -132,7 +130,6 @@ a:active {
 }
 
 .profile_data:first-of-type {
-    font-weight: bold;
     margin-top: 20px;
 }
 
@@ -168,6 +165,7 @@ a:active {
 /* ----------------------------------- Repositórios ---------------------------------- */
 
 .rep_card { margin-top: 15px; }
+.rep_card .card { width: 100%; }
 .rep_card p { text-align: justify; }
 .rep_title i { padding-right: 16px; }
 
@@ -181,6 +179,8 @@ a:active {
     font-size: 15px;
     margin-top: 0px;
 }
+
+.rep_card .text-muted { font-size: 13px; }
 
 .rep_link button {
     background-color: #333333;

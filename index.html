@@ -53,20 +53,19 @@
         <section id="profile" class="profile_general">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-xl-4 text-center">
-                    <img class="profile_img rounded-circle" src="assets/images/me.png" alt="Pedro Lopes">
+                    <img id="profile_img" class="profile_img rounded-circle" src="assets/images/me.png" alt="Pedro Lopes">
                 </div>
 
                 <div class="profile_texts col-lg-6 col-xl-8">
-                    <h1 class="text-center text-lg-start" id="profile_name">Pedro Lopes</h1>
+                    <h1 id="profile_name" class="text-center text-lg-start">Name</h1>
                     <div class="text-center text-lg-start">
-                        <span class="profile_user text-center text-lg-start"><i class="fas fa-user"></i><a href="#" target="_blank">httpspedroh</a></span>
-                        <span class="profile_user text-center text-lg-start"><i class="fas fa-users"></i>
-                            <a href="#" target="_blank"><b>1</b> follower</a> · <a href="#" target="_blank"><b>0</b> following</a></span>
+                        <span id="profile_user" class="profile_user text-center text-lg-start">User</span>
+                        <span id="profile_follow" class="profile_user text-center text-lg-start"><i class="fas fa-users"></i>Followers</span>
                     </div>
 
-                    <div class="profile_bio">🦆</div>
-                    <span class="profile_data"><i class="far fa-building"></i>@pucminas</span>
-                    <span class="profile_data"><i class="fas fa-map-marker-alt"></i><a href="https://www.google.com/maps/place/Belo Horizonte, MG, Brazil" target="_bl">Belo Horizonte, MG, Brazil</a></span>
+                    <div id="profile_bio" class="profile_bio">Bio</div>
+                    <span id="profile_org" class="profile_data">Company</span>
+                    <span id="profile_location" class="profile_data">Location</span>
                 </div>
             </div>
         </section>
@@ -77,23 +76,8 @@
             <h1 class="general_title">Repositories</h1>
             <hr style="width: 140px; color: black; height: 1.5px; background-color:black; opacity: 100%; margin-top: 2px;" />
 
-            <div class="row">
-                <span class="rep_card col-12 col-lg-6 d-flex justify-content-center">
-                    <div class="card bg-light mb-3">
-                        <div class="card-header rep_title">
-                            <i class="rep_iconRep far fa-folder"></i><b>DIW - Personal Page</b> 
-                            <span class="rep_lang">CSS</span>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">This is a non-collaborative project developed by me for the Web Interface Development academic work in Computer Science at PUC Minas - 2021/2. The website developed aims to mirror the student's personal information and their future projects
-                                and experiences.</p>
-
-                            <p class="card-text"><small class="text-muted">Created on: 09/27/21<br>Last update: 09/27/21</small></p>
-                            <span class="rep_link"><button class="btn"><a href="https://github.com/httpspedroh/diw-personal-page" target="_blank"><i class="fab fa-github"></i>View repository</a></button></span>
-                            <span class="rep_link"><button class="btn"><a href="https://github.com/httpspedroh/diw-personal-page" target="_blank"><i class="fas fa-tv"></i>View website</a></button></span>
-                        </div>
-                    </div>
-                </span>
+            <div id="rep_rows" class="row">
+                
             </div>
         </section>
     </main>
@@ -112,6 +96,8 @@
     <!------------------------------------------------------------------------------------------------------------->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    <script src="assets/scripts/index.js"></script>
 </body>
 
 </html>
