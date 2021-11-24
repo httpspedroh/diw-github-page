@@ -1,13 +1,15 @@
 let xhr = new XMLHttpRequest();
 let xhrRep = new XMLHttpRequest();
 
+console.log(`${window.location.pathname.substring(1)}`);
+
 xhr.onload = loadUserData;
-xhr.open('GET', `https://api.github.com/users/${window.location.pathname}`);
+xhr.open('GET', `https://api.github.com/users/${window.location.pathname.substring(1)}`);
 xhr.setRequestHeader('Authorization', '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');
 xhr.send();
 
 xhrRep.onload = loadUserRepos;
-xhrRep.open('GET', `https://api.github.com/users/${window.location.pathname}/repos`);
+xhrRep.open('GET', `https://api.github.com/users/${window.location.pathname.substring(1)}/repos`);
 xhrRep.setRequestHeader('Authorization', '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');
 xhrRep.send();
 
