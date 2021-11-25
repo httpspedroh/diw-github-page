@@ -33,8 +33,20 @@ function loadUserData(user)
 
 function showUserData() {
 
-    if(xhrUser.status == 404) return alert(`O usuário "${searchInput.value}" não foi encontrado!`);
-
+    if(xhrUser.status == 404) 
+    {
+        return bootbox.alert({
+            closeButton: false,
+            message: `O usuário "${searchInput.value}" não foi encontrado!`,
+            size: 'small',
+            buttons: {
+                ok: {
+                    className: 'btn-dark',
+                },
+            },
+        });
+    }
+    
     let text = '';
     let elem_change;
     let data = JSON.parse(this.responseText);
