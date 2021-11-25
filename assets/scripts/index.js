@@ -160,7 +160,7 @@ function showUserRepos() {
             if(totalCommits != 0) 
             {
                 plural = totalCommits == 1 ? '' : 's';
-                text += ` <span class="rep_commits"><a href="https://github.com/httpspedroh/templates-tiaw/commits" target="_blank">${totalCommits} commit${plural}</a></span>`;
+                text += ` <span class="rep_commits"><a href="https://github.com/${rep.owner.login}/${rep.name}/commits" target="_blank">${totalCommits} commit${plural}</a></span>`;
             }
 
             text += `</div>

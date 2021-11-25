@@ -69,12 +69,6 @@ a:active {
     background-color: #333333 !important;
 }
 
-@media (max-width: 576px) {
-    .menu_search {
-        padding-top: 15px;
-    }
-}
-
 @media (max-width: 828px) {
     .menu_buttons li {
         padding: 3px;
