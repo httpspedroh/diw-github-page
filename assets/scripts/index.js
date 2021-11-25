@@ -35,14 +35,10 @@ function showUserData() {
 
     if(xhrUser.status == 404) return alert(`O usuário "${searchInput.value}" não foi encontrado!`);
 
-    console.log(xhrUser.status);
-
     let text = '';
     let elem_change;
     let data = JSON.parse(this.responseText);
     let plural = 's';
-
-    console.log(data);
 
     // -------- //
 
@@ -101,6 +97,9 @@ function showUserData() {
 
         elem_change.style.visibility = "visible";
     }
+
+    document.getElementById('main').style.display = "block";
+    document.getElementById('footer').style.display = "block";
 }
 
 // ------------------------------------------------------------------------------------------------------------------ //

@@ -4,6 +4,8 @@ body {
     min-height: 100vh;
 }
 
+main, footer { display: none; }
+
 a,
 a:visited,
 a:hover,
