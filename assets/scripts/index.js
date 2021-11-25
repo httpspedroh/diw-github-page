@@ -160,13 +160,13 @@ function showUserRepos() {
             if(totalCommits != 0) 
             {
                 plural = totalCommits == 1 ? '' : 's';
-                text += ` <span class="rep_commits">${totalCommits} commit${plural}</span>`;
+                text += ` <span class="rep_commits"><a href="https://github.com/httpspedroh/templates-tiaw/commits" target="_blank">${totalCommits} commit${plural}</a></span>`;
             }
 
             text += `</div>
                     <div class="card-body">
                         <p class="card-text">${desc}</p>
-                        <p class="card-text rep_createdOn"><small class="text-muted">Created on: ${dateCreated.toLocaleString()}
+                        <p class="card-text"><small class="text-muted">Created on: ${dateCreated.toLocaleString()}
                         </br>Updated on: ${dateUpdated.toLocaleString()}</small></p>
                         <span class="rep_link"><button class="btn"><a href="https://github.com/${rep.owner.login}/${rep.name}" target="_blank"><i class="fab fa-github"></i>View repository</a></button></span>`
             

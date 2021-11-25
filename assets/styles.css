@@ -205,12 +205,12 @@ a:active {
         text-align: center;
     }
 
-    .rep_link:first-of-type { margin-bottom: 10px; }
+    .rep_link:first-of-type { margin-bottom: 5px; }
     .rep_card p:last-of-type { text-align: center; }
 }
 
 @media (max-width: 575px) {
-    .rep_title, .rep_lang, .rep_commits { font-size: 10px; }
+    .rep_title, .rep_lang, .rep_commits, .rep_link button, .rep_card, .rep_card .text-muted { font-size: 10px; }
 }
 
 /* ---------------------------------- Footer ---------------------------------- */
