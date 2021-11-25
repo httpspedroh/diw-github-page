@@ -35,6 +35,15 @@ a:active {
     color: white;
 }
 
+textarea:focus,
+input[type="search"]:focus,
+.uneditable-input:focus 
+{   
+  border-color: white;
+  box-shadow: none;
+  outline: 0 none;
+}
+
 /* ---------------------------------- Header --------------------------------- */
 
 .header {
