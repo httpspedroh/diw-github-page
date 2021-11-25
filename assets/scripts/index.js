@@ -1,6 +1,8 @@
 const defaultUser = 'httpspedroh',
       authorizationKey = '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';
 
+document.getElementById('search-input').value = defaultUser;
+
 loadUserData(defaultUser);
 
 // ------------------------------------------------------------------------------------------------------------------ //
