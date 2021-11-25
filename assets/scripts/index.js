@@ -77,7 +77,7 @@ function showUserData() {
 
     elem_change = document.getElementById('profile_follow');
     plural = data.followers == 1 ? '' : 's';
-    elem_change.innerHTML = `<a href="https://github.com/${data.login}?tab=followers" target="_blank"><b>${data.followers}</b> follower${plural}</a> · <a href="https://github.com/${data.login}?tab=following" target="_blank"><b>${data.following}</b> following</a>`;
+    elem_change.innerHTML = `<i class="fas fa-users"></i><a href="https://github.com/${data.login}?tab=followers" target="_blank"><b>${data.followers}</b> follower${plural}</a> · <a href="https://github.com/${data.login}?tab=following" target="_blank"><b>${data.following}</b> following</a>`;
 
     // -------- //
 
