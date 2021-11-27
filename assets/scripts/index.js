@@ -1,5 +1,5 @@
 const defaultUser = 'httpspedroh',
-      authorizationKey = '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';
+      authorizationKey = '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';
 
 document.getElementById('search-input').value = defaultUser;
 
@@ -38,12 +38,13 @@ function showUserData() {
     if(xhrUser.status == 404) 
     {
         return bootbox.alert({
-            closeButton: false,
+            // closeButton: false,
             message: `O usuário "${searchInput.value}" não foi encontrado!`,
             size: 'small',
             buttons: {
                 ok: {
                     className: 'btn-dark',
+                    label: 'teste',
                 },
             },
         });
@@ -140,48 +141,28 @@ function showUserRepos() {
 
         // ---------------------- //
 
-        let totalCommits;
-        let xhrCommits = new XMLHttpRequest();
+        if(rep.description == null) desc = "<i>No description provided.</i>";
+        else desc = rep.description;
 
-        xhrCommits.onload = function () {
+        text += `<span class="rep_card col-12 col-lg-6 d-flex justify-content-center">
+            <div class="card bg-light mb-3">
+                <div class="card-header rep_title">
+                    <i class="rep_iconRep far fa-folder"></i><b>${rep.name}</b>`;
 
-            let dataCommits = JSON.parse(this.responseText);
-            totalCommits = dataCommits.length;
+        if(rep.language != null) text += `<span class="rep_lang">${rep.language}</span>`;
+        
+        text += `</div>
+                <div class="card-body">
+                    <p class="card-text">${desc}</p>
+                    <p class="card-text"><small class="text-muted">Created on: ${dateCreated.toLocaleString()}
+                    </br>Updated on: ${dateUpdated.toLocaleString()}</small></p>
+                    <span class="rep_link"><button class="btn"><a href="https://github.com/${rep.owner.login}/${rep.name}" target="_blank"><i class="fab fa-github"></i>View repository</a></button></span>`
+        
+        if(rep.has_pages == true) text += ` <span class="rep_link"><button class="btn"><a href="https://${rep.owner.login}.github.io/${rep.name}/" target="_blank"><i class="fas fa-tv"></i>View website</a></button></span>`;
 
-            // ---------------------- //
+        text += `</div></div></span>`;
 
-            if(rep.description == null) desc = "<i>No description provided.</i>";
-            else desc = rep.description;
-
-            text += `<span class="rep_card col-12 col-lg-6 d-flex justify-content-center">
-                <div class="card bg-light mb-3">
-                    <div class="card-header rep_title">
-                        <i class="rep_iconRep far fa-folder"></i><b>${rep.name}</b>`;
-
-            if(rep.language != null) text += `<span class="rep_lang">${rep.language}</span>`;
-            if(totalCommits != 0) 
-            {
-                plural = totalCommits == 1 ? '' : 's';
-                text += ` <span class="rep_commits"><a href="https://github.com/${rep.owner.login}/${rep.name}/commits" target="_blank">${totalCommits} commit${plural}</a></span>`;
-            }
-
-            text += `</div>
-                    <div class="card-body">
-                        <p class="card-text">${desc}</p>
-                        <p class="card-text"><small class="text-muted">Created on: ${dateCreated.toLocaleString()}
-                        </br>Updated on: ${dateUpdated.toLocaleString()}</small></p>
-                        <span class="rep_link"><button class="btn"><a href="https://github.com/${rep.owner.login}/${rep.name}" target="_blank"><i class="fab fa-github"></i>View repository</a></button></span>`
-            
-            if(rep.has_pages == true) text += ` <span class="rep_link"><button class="btn"><a href="https://${rep.owner.login}.github.io/${rep.name}/" target="_blank"><i class="fas fa-tv"></i>View website</a></button></span>`;
-
-            text += `</div></div></span>`;
-
-            elem_change.innerHTML = text;
-        }
-
-        xhrCommits.open('GET', `https://api.github.com/repos/${rep.owner.login}/${rep.name}/commits`);
-        xhrCommits.setRequestHeader('Authorization', `token ${authorizationKey}`);
-        xhrCommits.send();
+        elem_change.innerHTML = text;
     }
 }
 

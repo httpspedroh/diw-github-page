@@ -172,7 +172,7 @@ input[type="search"]:focus,
 .rep_card p { text-align: justify; }
 .rep_title i { padding-right: 16px; }
 
-.rep_lang, .rep_commits {
+.rep_lang {
     float: right;
     color: white;
     font-weight: lighter;
@@ -183,7 +183,6 @@ input[type="search"]:focus,
 }
 
 .rep_lang { background-color: #df5bb3; }
-.rep_commits { background-color: #731abd; }
 .card-header span:first-of-type { margin-left: 5px; }
 .rep_card .text-muted { font-size: 13px; }
 
@@ -213,7 +212,7 @@ input[type="search"]:focus,
 }
 
 @media (max-width: 575px) {
-    .rep_title, .rep_lang, .rep_commits, .rep_link button, .rep_card, .rep_card .text-muted { font-size: 10px; }
+    .rep_title, .rep_lang, .rep_link button, .rep_card, .rep_card .text-muted { font-size: 10px; }
 }
 
 /* ---------------------------------- Footer ---------------------------------- */
