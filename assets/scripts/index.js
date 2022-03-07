@@ -1,5 +1,5 @@
 const defaultUser = 'httpspedroh',
-      authorizationKey = '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';
+      authorizationKey = '-';
 
 document.getElementById('search-input').value = defaultUser;
 
@@ -38,13 +38,13 @@ function showUserData() {
     if(xhrUser.status == 404) 
     {
         return bootbox.alert({
-            // closeButton: false,
+            closeButton: false,
             message: `O usuário "${searchInput.value}" não foi encontrado!`,
             size: 'small',
             buttons: {
                 ok: {
                     className: 'btn-dark',
-                    label: 'teste',
+                    label: 'Fechar',
                 },
             },
         });
@@ -77,12 +77,12 @@ function showUserData() {
     // -------- //
 
     elem_change = document.getElementById('profile_follow');
-    plural = data.followers == 1 ? '' : 's';
-    elem_change.innerHTML = `<i class="fas fa-users"></i><a href="https://github.com/${data.login}?tab=followers" target="_blank"><b>${data.followers}</b> follower${plural}</a> · <a href="https://github.com/${data.login}?tab=following" target="_blank"><b>${data.following}</b> following</a>`;
+    plural = data.followers == 1 ? '' : 'es';
+    elem_change.innerHTML = `<i class="fas fa-users"></i><a href="https://github.com/${data.login}?tab=followers" target="_blank"><b>${data.followers}</b> seguidor${plural}</a> · <a href="https://github.com/${data.login}?tab=following" target="_blank"><b>${data.following}</b> seguindo</a>`;
 
     // -------- //
 
-    if(data.bio == null) text = '<i>No bio provided.</i>';
+    if(data.bio == null) text = '<i>Nenhuma biografia adicionada.</i>';
     else text = data.bio;
 
     elem_change = document.getElementById('profile_bio');
@@ -130,7 +130,7 @@ function showUserRepos() {
 
     elem_change = document.getElementById('rep_rows');
 
-    if(data.length == 0) elem_change.innerHTML = `<span class="col-12"><i>No public repositories found.</i></span>`;
+    if(data.length == 0) elem_change.innerHTML = `<span class="col-12"><i>Nenhum repositório público encontrado.</i></span>`;
 
     for(x = 0; x < data.length; x++)
     {
@@ -141,7 +141,7 @@ function showUserRepos() {
 
         // ---------------------- //
 
-        if(rep.description == null) desc = "<i>No description provided.</i>";
+        if(rep.description == null) desc = "<i>Nenhuma descrição fornecida.</i>";
         else desc = rep.description;
 
         text += `<span class="rep_card col-12 col-lg-6 d-flex justify-content-center">
@@ -154,11 +154,11 @@ function showUserRepos() {
         text += `</div>
                 <div class="card-body">
                     <p class="card-text">${desc}</p>
-                    <p class="card-text"><small class="text-muted">Created on: ${dateCreated.toLocaleString()}
-                    </br>Updated on: ${dateUpdated.toLocaleString()}</small></p>
-                    <span class="rep_link"><button class="btn"><a href="https://github.com/${rep.owner.login}/${rep.name}" target="_blank"><i class="fab fa-github"></i>View repository</a></button></span>`
+                    <p class="card-text"><small class="text-muted">Criado: ${dateCreated.toLocaleString('pt-br')}
+                    </br>Atualizado: ${dateUpdated.toLocaleString('pt-br')}</small></p>
+                    <span class="rep_link"><button class="btn"><a href="https://github.com/${rep.owner.login}/${rep.name}" target="_blank"><i class="fab fa-github"></i>Abrir repositório</a></button></span>`
         
-        if(rep.has_pages == true) text += ` <span class="rep_link"><button class="btn"><a href="https://${rep.owner.login}.github.io/${rep.name}/" target="_blank"><i class="fas fa-tv"></i>View website</a></button></span>`;
+        if(rep.has_pages == true) text += ` <span class="rep_link"><button class="btn"><a href="https://${rep.owner.login}.github.io/${rep.name}/" target="_blank"><i class="fas fa-tv"></i>Abrir website</a></button></span>`;
 
         text += `</div></div></span>`;
 
