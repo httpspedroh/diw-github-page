@@ -179,7 +179,7 @@ function showUserRepos() {
         let desc = '';
         let rep = data[x];
         let dateCreated = new Date(rep.created_at);
-        let dateUpdated = new Date(rep.updated_at);
+        let datePushed = new Date(rep.pushed_at);
 
         // ---------------------- //
 
@@ -197,7 +197,7 @@ function showUserRepos() {
                 <div class="card-body">
                     <p class="card-text">${desc}</p>
                     <p class="card-text"><small class="text-muted">Created on: ${dateCreated.toLocaleString()}
-                    </br>Updated on: ${dateUpdated.toLocaleString()}</small></p>
+                    </br>Updated on: ${datePushed.toLocaleString()}</small></p>
                     <span class="rep_link"><button class="btn"><a href="https://github.com/${rep.owner.login}/${rep.name}" target="_blank"><i class="fab fa-github"></i>View repository</a></button></span>`
         
         if(rep.has_pages == true) text += ` <span class="rep_link"><button class="btn"><a href="https://${rep.owner.login}.github.io/${rep.name}/" target="_blank"><i class="fas fa-tv"></i>View website</a></button></span>`;
