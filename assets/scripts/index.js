@@ -112,16 +112,12 @@ function showUserData() {
         }
     }
 
-    console.log(text);
-
     elem_change = document.getElementById('profile_bio');
     elem_change.innerHTML = text;
 
     // -------- //
 
     elem_change = document.getElementById('profile_blog');
-
-    console.log(data.blog);
 
     if(data.blog == null) elem_change.style.visibility = "hidden";
     else
