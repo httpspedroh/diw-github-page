@@ -15,8 +15,8 @@ searchButton.addEventListener('click', searchUser);
 
 // ------------------------------------------------------------------------------------------------------------------ //
 
-function loadUserData(user)
-{
+function loadUserData(user) {
+
     xhrUser = new XMLHttpRequest();
     xhrRep = new XMLHttpRequest();
 
@@ -35,16 +35,16 @@ function loadUserData(user)
 
 function showUserData() {
 
-    if(xhrUser.status == 404) 
-    {
+    if(xhrUser.status == 404) {
+
         return bootbox.alert({
             closeButton: false,
-            message: `O usuário "${searchInput.value}" não foi encontrado!`,
+            message: `User "${searchInput.value}" not found!`,
             size: 'small',
             buttons: {
                 ok: {
                     className: 'btn-dark',
-                    label: 'Fechar',
+                    label: 'Close',
                 },
             },
         });
@@ -85,8 +85,50 @@ function showUserData() {
     if(data.bio == null) text = '<i>No bio provided.</i>';
     else text = data.bio;
 
+    let pos = text.indexOf('@');
+
+    if(pos != -1) {
+        
+        found = false;
+
+        for(i = 0; i < text.length; i++) {
+
+            if(text[i] == '@') {
+
+                if(found == false) {
+
+                    found = true;
+                    text = text.slice(0, i) + `<b>` + text.slice(i);
+                }
+            }
+            else if(text[i] == ' ') {
+
+                if(found == true) {
+
+                    found = false;
+                    text = text.slice(0, i) + `</b>` + text.slice(i);
+                }
+            }
+        }
+    }
+
+    console.log(text);
+
     elem_change = document.getElementById('profile_bio');
     elem_change.innerHTML = text;
+
+    // -------- //
+
+    elem_change = document.getElementById('profile_blog');
+
+    console.log(data.blog);
+
+    if(data.blog == null) elem_change.style.visibility = "hidden";
+    else
+    {
+        elem_change.innerHTML = `<i class="fa-solid fa-paperclip"></i><a href="${data.blog}" target="_blank">${data.blog}</a>`;
+        elem_change.style.visibility = "visible";
+    }
 
     // -------- //
 
@@ -168,8 +210,8 @@ function showUserRepos() {
 
 // ------------------------------------------------------------------------------------------------------------------ //
 
-function searchUser()
-{
+function searchUser() {
+
     let inputValue = searchInput.value;
     
     loadUserData(inputValue);
